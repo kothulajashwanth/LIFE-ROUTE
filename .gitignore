@@ -1,0 +1,22 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Environment
+.env
+
+# Dataset
+dataset/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Build
+node_modules/
+.next/
+dist/
+
+# OS
+.DS_Store
+Thumbs.db
