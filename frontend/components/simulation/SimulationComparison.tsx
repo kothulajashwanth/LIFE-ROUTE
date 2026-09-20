@@ -75,7 +75,7 @@ export function SimulationComparison({
         </div>
 
         <div className="flex items-center gap-2 self-start sm:self-center">
-          <ProvenanceBadge type="SIMULATED" size="md" />
+          <ProvenanceBadge type="SIMULATED" size="default" />
         </div>
       </div>
 
@@ -145,7 +145,7 @@ export function SimulationComparison({
               <span>+{typeof result.speed_delta_kmh === "number" ? result.speed_delta_kmh.toFixed(2) : "—"} km/h</span>
             </div>
             <span className="text-[10px] text-blue-500/80 block mt-0.5">
-              {typeof result.baseline_speed_kmh === "number" ? result.baseline_speed_kmh.toFixed(1) : "—"} &rarr; {typeof result.simulated_speed_kmh === "number" ? result.simulated_speed_kmh.toFixed(1) : "—"} km/h
+              {typeof result.baseline_observed_speed_kmh === "number" ? result.baseline_observed_speed_kmh.toFixed(1) : "—"} &rarr; {typeof result.counterfactual_speed_kmh === "number" ? result.counterfactual_speed_kmh.toFixed(1) : "—"} km/h
             </span>
             <div className="flex items-center justify-between text-[10px] text-blue-400/80 mt-1 border-t border-blue-800/40 pt-1 font-mono">
               <span className="font-sans">Capacity Delta:</span>

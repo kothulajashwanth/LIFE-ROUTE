@@ -108,11 +108,8 @@ export function GeographicNetworkMap({
   }, [selectedSegmentId]);
 
   const leafletContainerRef = useRef<HTMLDivElement | null>(null);
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const leafletMapRef = useRef<any>(null);
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const segmentsLayerRef = useRef<any>(null);
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const nodesLayerRef = useRef<any>(null);
 
   // 1. Index organizer nodes by node_id
@@ -366,7 +363,6 @@ export function GeographicNetworkMap({
     let isMounted = true;
 
     async function initMap() {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       let L = (window as any).L;
       if (!L) {
         try {
@@ -378,7 +374,6 @@ export function GeographicNetworkMap({
             script.onerror = () => reject(new Error("Leaflet script failed to load"));
             document.head.appendChild(script);
           });
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           L = (window as any).L;
         } catch {
           // Fallback gracefully to high-performance SVG projection
@@ -428,7 +423,6 @@ export function GeographicNetworkMap({
 
   // 5. Update Leaflet Layers efficiently without recreating the map
   useEffect(() => {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const L = (window as any).L;
     const map = leafletMapRef.current;
     const segmentsLayer = segmentsLayerRef.current;
@@ -631,7 +625,6 @@ export function GeographicNetworkMap({
 
   // Fit bounds strictly to actual API coordinates
   const handleFitNetwork = useCallback(() => {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const L = (window as any).L;
     const map = leafletMapRef.current;
     if (L && map && nodes.length > 0) {

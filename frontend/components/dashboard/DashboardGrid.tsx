@@ -841,7 +841,7 @@ export function DashboardGrid({
               <div className="text-xs text-slate-400 font-sans flex items-center gap-2">
                 <span>Current speed: <strong className="font-mono text-emerald-400 font-bold">{(selectedTrafficRecord?.speed_kmh ?? selectedOrgSegment?.free_flow_speed_kmh ?? 40.0).toFixed(1)} km/h</strong></span>
                 <span>&bull;</span>
-                <span className="hidden sm:inline">Flow: <strong className="font-mono text-slate-300">{(selectedTrafficRecord?.current_flow_vph ?? 500).toFixed(0)} vph</strong></span>
+                <span className="hidden sm:inline">Flow: <strong className="font-mono text-slate-300">{(selectedTrafficRecord?.flow_vph ?? 500).toFixed(0)} vph</strong></span>
                 <span>&bull;</span>
                 <span>Synchronized across all 6 decision modules</span>
               </div>
@@ -977,7 +977,7 @@ export function DashboardGrid({
             <ExplainableAIPanel
               whyExplanation={activeScenarioDef.whyExplanation}
               scenarioTitle={activeScenarioDef.title}
-              isSimulated={activeScenarioId !== "NORMAL"}
+              isSimulated={true}
             />
             <ControllerActionLogPanel
               actionLogs={activeScenarioDef.controllerActions}
@@ -1315,3 +1315,4 @@ export function DashboardGrid({
     </div>
   );
 }
+

@@ -118,8 +118,9 @@ export function SimulationPanel({
     if (selectedSegment) {
       const live = trafficRecords.find((t) => t.segment_id === selectedSegment);
       if (live) {
-        setBaselineSpeed(live.current_speed_kmh);
-        setBaselineFlow(live.current_flow_vph);
+        setBaselineSpeed(live.speed_kmh);
+        setBaselineFlow(live.flow_vph);
+        setBaselineQueue(live.queue_length_veh);
       }
     }
   }, [selectedSegment, trafficRecords]);
