@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-poppins: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* LIFE ROUTE Design System Tokens */
+  --background: #050914;
+  --surface: #0a1220;
+  --surface-elevated: #0f1928;
+  --border: #1b3045;
+  --primary-cyan: #00d9ff;
+  --success: #20e0a0;
+  --warning: #ffb020;
+  --danger: #ff3d5a;
+  --purple: #8b5cf6;
+  --text-primary: #f4f8fc;
+  --text-secondary: #91a4b8;
+  --text-muted: #5e7187;
+}
+
+body {
+  color: var(--text-primary);
+  background: var(--background);
+  font-family: var(--font-poppins);
+  min-height: 100vh;
+}
+
+/* Subtle Command Center Grid Pattern */
+.bg-grid {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(0, 217, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 217, 255, 0.03) 1px, transparent 1px);
+}
+
+/* Command Center Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #050914;
+}
+::-webkit-scrollbar-thumb {
+  background: #1b3045;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #00d9ff;
+}
